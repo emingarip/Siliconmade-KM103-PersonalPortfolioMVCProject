@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Core.Persistence.Dynamic;
+using Core.Persistence.Paging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Query;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +18,7 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext>
     : IAsyncRepository<TEntity, TEntityId>, IRepository<TEntity, TEntityId>
     where TEntity : Entity<TEntityId>
     where TContext : DbContext
-{a
+{
     protected readonly TContext Context;
 
     public EfRepositoryBase(TContext context)
