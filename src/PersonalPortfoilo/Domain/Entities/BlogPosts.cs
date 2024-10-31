@@ -15,7 +15,7 @@ public class BlogPosts : Entity<int>
     public DateTime PublishDate { get; set; } // Created Date farklıdır. Blog yazısı onaylandıktan sonra yayına alındığı için ayrıca tarih tutulmalıdır
 
     public int UserId { get; set; }
-    public virtual ICollection<BlogComments> Comments { get; set; }
+    public virtual ICollection<BlogComments> BlogComments { get; set; }
 
     public virtual User User { get; set; }
 
@@ -24,7 +24,7 @@ public class BlogPosts : Entity<int>
     {
         Title = string.Empty;
         Content = string.Empty;
-        Comments = new List<BlogComments>();
+        BlogComments = new List<BlogComments>();
 
     }
 
